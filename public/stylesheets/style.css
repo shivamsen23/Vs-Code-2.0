@@ -1,0 +1,241 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+  font-family: "Gilroy";
+}
+
+html,body{
+  height: 100%;
+  width: 100%;
+}
+
+#main{
+  height: 100%;
+  width: 100%;
+  background-color: #dadada;
+  display: flex;
+}
+
+#sidenav{
+  width:25%;
+  height: 100%;
+  background-color: rgb(73, 69, 69);
+}
+
+#editor{
+  width:75%;
+  height: 100%;
+  position: relative;
+}
+
+#headings{
+  margin-top: 5px;
+  width: 100%;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#headings h4{
+  font-weight: 900;
+}
+
+#icons{
+  display: flex;
+  gap:15px;
+  align-items: center;
+  cursor: pointer;
+}
+
+#files{
+  display: flex;
+  flex-direction: column;
+  padding: 5px 15px;
+  /* height: 80%; */
+}
+
+#file>a{
+  opacity: 0;
+}
+
+#file>a:hover{
+  opacity: 1;
+}
+
+#file{
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: #dadada;
+  margin-bottom: 10px;
+  padding:5px 15px;
+  /* width: 100%; */
+  
+}
+
+#name{
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+#topnav{
+  height: 70px;
+  width: 100%;
+  /* background-color: red; */
+  padding: 15px 15px;
+}
+
+#navfile{
+  cursor:pointer;
+  height:50px;
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+  background-color: black;
+  color: white;
+  align-items: center;
+  padding: 5px 15px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+#navfile>a>i{
+  opacity: 0;
+}
+
+#navfile>a>i:hover{
+  opacity: 1;
+}
+
+#code{
+  margin-top: 9px;
+  height: calc(100% - 83px);
+  width: 100%;
+}
+
+#code textarea{
+  height: 100%;
+  width: 100%;
+  padding: 10px 15px;
+  outline: none;
+  font-size: 20px;
+  border: none;
+  background-color: #dadada;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+form{
+  /* height: 30px; */
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#createfile{
+  height: 40px;
+  width: 90%;
+  margin: 3px 15px;
+  padding: 0 10px;
+  font-weight: 900;
+  outline: none;
+  display: none;
+}
+
+#createfolder{
+  height: 40px;
+  width: 90%;
+  margin: 3px 15px;
+  padding: 0 10px;
+  font-weight: 900;
+  outline: none;
+  display: none;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+#small{
+  text-transform: capitalize;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: rgba(3, 2, 2, 0.836);
+}
+
+#navfile i{
+  color: #fff;
+}
+
+#code input{
+  position: absolute;
+  top: 6%;
+  right: 3%;
+  padding: 5px 15px;
+  color: #fff;
+  background-color: royalblue;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  margin-bottom: 5px
+}
+
+ #small .nav{
+  height: 5vh;
+  width: 100%;
+}
+
+#small  a{
+  color: white;
+  text-decoration: none;
+  display: inline;
+  margin-left: 45px;
+  font-size: 1.2vw;
+  padding:  90px 11px;
+  margin-top: 25px;
+}
+
+#small  h1{
+  position: absolute;
+  top: 50%;
+  left: 53%;
+  letter-spacing: 3px;
+  transform: translate(-50%,-50%);
+  color: white;
+  z-index: 2;
+  font-family: "Gilroy";
+  font-weight: 700;
+  font-size: 4vw;
+}
+#small  h6{
+  position: absolute;
+  top: 57%;
+  left: 53%;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  color: white;
+  font-family: "Gilroy";
+  font-weight: 700;
+  font-size: 1.6vw;
+  letter-spacing: 2px;
+}
+
+#small img{
+  z-index: 1;
+  position: absolute;
+  top: 23%;
+  height: 300px;
+  left: 32%;
+}

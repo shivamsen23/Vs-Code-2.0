@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VSCode 2.0</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="sidenav">
+        <div id="headings">
+          <a href="/"><h4>VS Code2.0</h4></a>
+          <div id="icons">
+            <i title = "create file" id = "filecreatebtn" class="ri-add-line"></i>
+            <i title = "create folder" id = "foldercreatebtn" class="ri-folder-add-line"></i>
+           <a href="/"> <i title = "refresh"class="ri-refresh-fill"></i></a>
+          </div>
+        </div>
+        <form action="/filecreate">
+          <input id = "createfile" name = "createfile" type="text" placeholder="filename">
+        </form>
+
+        <form action="/foldercreate">
+          <input id = "createfolder" name = "createfolder" type="text" placeholder="foldername">
+        </form>
+        <div id="files">
+          <% data.forEach(function(elem){ %>
+          <div id="file">
+            <div id="name">
+              <% if(elem.isFolder) {%> 
+              <i class="ri-folder-3-fill"></i>
+              <% }else{ %>
+              <i class="ri-file-list-line"></i> 
+              <% } %> 
+            <a href="/file/<%=elem.names%>"><h5><%=elem.names %></h5></a>
+            </div>
+           <a href="/delete/<%=elem.names%>"><i class="ri-delete-bin-line"></i></a>   
+        </div>
+        <%})%>
+      </div>
+      </div>
+      <div id="editor">
+        <% if(filename.length>0){ %> 
+        <div id="topnav">
+          <div id="navfile">
+            <div id="name">
+              <i class="ri-file-list-line"></i>
+              <h5>filename</h5>
+            </div>
+          <a href="/"><i class="ri-close-line"></i></a> 
+          </div>
+        </div>
+        <div id="code">
+          <form action="/save/<%=filename%>" method="post">
+          <textarea name="data" id="" cols="30" rows="10"><%=filedata%> </textarea>
+          <input type="submit" value="Save">
+        </form>
+        </div>
+        <% }else{ %> 
+        <div id="small">
+          <div class="nav">
+            <a href="">index.html</a>
+            <a href="">style.css</a>
+            <a href="">script.js</a>
+            <a href="">abc.txt</a>
+          </div>
+          <img src="/images/png-transparent-visual-studio-code-hd-logo-thumbnail-removebg-preview.png" alt="">
+              <h1>Let's Code</h1>
+              <h6>Start a new Journey</h6>
+        </div>
+        <% } %> 
+      </div>
+    </div>
+    <script>
+
+      function filehandling(){
+      let flag = 0;
+      document.querySelector('#filecreatebtn').addEventListener('click',function(){
+        if(flag ===0 ){
+          document.querySelector('#createfile').style.display = "block";
+          flag= 1;
+        }else{
+          document.querySelector('#createfile').style.display = "none";
+          flag= 0;
+        } 
+      })
+    }
+
+    function formhandling(){
+      let flag = 0;
+      document.querySelector('#foldercreatebtn').addEventListener('click',function(){
+        if(flag ===0 ){
+          document.querySelector('#createfolder').style.display = "block";
+          flag= 1;
+        }else{
+          document.querySelector('#createfolder').style.display = "none";
+          flag= 0;
+        } 
+      })
+    }
+
+    filehandling();
+    formhandling();
+
+    </script>
+  </body>
+</html>
